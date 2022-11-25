@@ -1,12 +1,36 @@
+//get elements from HTML
 let screen=document.querySelector("#screen");
-let btn=document.querySelectorAll(".btn");
-btn.forEach(item=>{
-    // item.addEventListener("click",(e)=>
-    // btntext=e.target.innerText;
-    // if(btnText=='*')
-    // btnText="*";
+let button=document.querySelectorAll(".btn");
+let str="";
 
-    // screen.value+=btnText
-    // )
-    console.log(item);
+//
+Array.from(button).forEach((button)=>{
+    button.addEventListener("click",(e)=>{
+
+        //condition for =
+        if(e.target.innerHTML=="=")
+        {
+            str=eval(str);
+            document.querySelector("input").value= str;
+        }
+        else if(e.target.innerHTML=="CE")
+        {
+            str="";
+            document.querySelector("input").value= str;
+        }
+        else if(e.target.innerHTML=="sin")
+        {
+            let num=parseFloat(str);
+            let out=Math.sin(num);
+            console.log(out);
+            str=toString(out);
+            document.querySelector("input").value= str;
+        }
+        else{
+        console.log(e.target.innerHTML);
+        str=str + e.target.innerHTML;
+        document.querySelector("#screen").value=str;
+        }
+    })
+    
 })
