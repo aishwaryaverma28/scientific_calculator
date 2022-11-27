@@ -11,9 +11,13 @@ body{
     align-items: center;
     min-height: 100vh;
 }
+.change{
+justify-items: left;
+
+}
 #calculator{
-    width:35%;
-    height:70vh;
+    width:30%;
+    height:50vh;
     padding:1rem;
     border-radius: 7px;
     background-color: #a8dadc;
